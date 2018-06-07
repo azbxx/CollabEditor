@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <style>
+            div {
+                margin: 0px;
+                padding: 0px;
+            }
+            #main {
+                height: 87vh;
+            }
+            #left {
+                border: black solid 1px;
+                width: 49.35%;
+                overflow: hidden;
+                height: 100%;
+                float: left;
+            }
+            #linecounter {
+                float: left;
+                width: 10%;
+            }
+            #texteditors {
+                float: right;
+            }
+            .linec {
+                list-style-type: none;
+                list-style-position:inside;
+                margin:0;
+                padding:0;
+            }
+            #right {
+                border: black solid 1px;
+                width: 49.35%;
+                height: 100%;
+                float: right;
+            }
+        </style>
+        <script>
+        $(function() {
+            $("#left").resizable({
+                resize: function( event, ui ) {
+                  document.getElementById("right").style.width = document.getElementById('main').getBoundingClientRect().width - ui.size.width - 10 + "px"
+                  console.log(document.getElementById('main').getBoundingClientRect().width - ui.size.width)
+                document.getElementById("right").style.height = (100/$( window ).height() * ui.size.height) + "vh"
+                }
+            });
+        });
+        </script>
+
+    </head>
+    <body>
+        <div id="main">
+            <div id="left">
+                <div id="tabs">
+
+                </div>
+                <div id="linecounter">
+                    <ul class="linec">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </div>
+                <div id="texteditors">
+                    hello
+                    does
+                    this
+                    work
+                </div>
+            </div>
+            <div id="right">
+                Here?
+            </div>
+        </div>
+    </body>
+    <script>
+    /*
+        Libraries needed!
+        1. Prism.js (code highlighting and language detection)
+        2. Togetherjs (networking using RPC and Operational transformations)
+        3. Electron (desktop app wrapper for chromium, turning this into useful app)
+        4. node-cmd (allowes javascript interaction with the system terminal)
+        5. node-utils/files (recursive directory finding, directory structure creations)
+        6. jQuery (functions and tools)
+        7. jQuery-ui (resizing, allowing for the flexible window layout)
+        
+
+    */
+//document.getElementById("toggleMode").addEventListener("click", function() {
+
+
+//});
+
+
+
+    </script>
+</html>
